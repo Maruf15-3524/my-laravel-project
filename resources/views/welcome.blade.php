@@ -10,5 +10,12 @@
     <?php 
         echo "Hello, World!";
         ?>
+        <button click="add_somthing()">
+            Click me     </button>
 </body>
 </html>
+<script>
+    function add_somthing(){
+        alert("Hello, World!");
+    }
+</script>
