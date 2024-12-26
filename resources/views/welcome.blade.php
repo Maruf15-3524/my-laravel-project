@@ -10,10 +10,15 @@
     <div class="control-group">
         <span>
             <b>
-                full name
+                Full name
             </b>
         </span>
+        <input type="text" class="small">
     </div>
+</div>
+<div class="control-group">
+    <legend>Location</legend>
+    <input type="textaria">
 </div>
 <body>
     <?php
