@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserInfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/user',[UserInfoController::class,'user']);
+// Route::get('/user', [UserController::class, 'index']);
+
+
