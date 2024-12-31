@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::post('/user',[UserInfoController::class,'user']);
+Route::get('/userview',[UserInfoController::class,'userview']);
+Route::get('/edituser/{id}',[UserInfoController::class,'edituser']);
 // Route::get('/user', [UserController::class, 'index']);
 
 

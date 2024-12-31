@@ -71,11 +71,13 @@
                         url: "{{ url('/user') }}",
                         data: data,
                         success: function (result) {
-                            alert("Success: " + result);
+                            // alert("Success: " + result);
+                            alert("data Succesfully Inserted");
+                            var redirectUrl = "/userview";
+				             window.location.href = redirectUrl;
+
                         },
-                        error: function (xhr, status, error) {
-                            alert("Error: " + xhr.responseText);
-                        }
+
                     });
                 }
             </script>
