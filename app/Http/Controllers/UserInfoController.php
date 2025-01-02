@@ -19,10 +19,10 @@ class UserInfoController extends Controller
 
     }
     public function userview(){
-        // $user= UserInfo::all();
+        $user= UserInfo::all();
         // $user=UserInfo::where("id",3)->first();
         // $user = UserInfo::select(["full_name","location","phone"])->first();
-        $user = UserInfo::where('full_name', 'aa')->where('location','aa')->get();
+        // $user = UserInfo::where('full_name', 'aa')->where('location','aa')->get();
 
         return view("viewuse",compact("user"));
 
@@ -32,5 +32,14 @@ public function edituser($id){
     // dd($id);
 $editusevariable = UserInfo::find($id);
 return view("editvie",compact("editusevariable"));
+}
+
+public function updateuser(Request $request){
+    // return response()->json($request->all());
+
+    $userupdate=UserInfo::find($request->id);
+    $userupdate->full_name= $request->full_name;
+    $userupdate->save();
+
 }
 }

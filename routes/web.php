@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::post('/user',[UserInfoController::class,'user']);
 Route::get('/userview',[UserInfoController::class,'userview']);
 Route::get('/edituser/{id}',[UserInfoController::class,'edituser']);
+
+Route::post('/upadte', [UserInfoController::class, 'updateuser']);
+
 // Route::get('/user', [UserController::class, 'index']);
 
 
