@@ -1,3 +1,5 @@
+@vite('resources/css/app.css')
+@vite('resources/js/app.js')
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -6,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
@@ -13,7 +17,7 @@
 
 <title>My New project</title>
 
-<h1>Dashbor</h1>
+<h1 class="text-slate-500 hover:text-red-600">Dashbor</h1>
 
 <div>
     <div class="control-group">
@@ -37,6 +41,15 @@
 <div>
     <b>Phone Number</b>
     <input type="text" id="phone">
+</div>
+<div>
+    <b>organigation name</b>
+    <input type="text" id="organigation">
+</div>
+
+<div>
+    <b>Profile Pic</b>
+    <input type="text" id="organigation">
 </div>
         <button onclick="add_somthing()" style="btn btn-small btn-success">
             Click me   </button>
