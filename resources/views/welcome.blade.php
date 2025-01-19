@@ -51,6 +51,10 @@
     <b>Profile Pic</b>
     <input type="text" id="organigation">
 </div>
+<div>
+    <b>Orginaization Profile picture</b>
+    <input type="text" id="organigation">
+</div>
         <button onclick="add_somthing()" style="btn btn-small btn-success">
             Click me   </button>
             <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
