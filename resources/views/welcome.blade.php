@@ -52,6 +52,10 @@
     <input type="text" id="organigation">
 </div>
 <div>
+    <b>org pic</b>
+    <input type="text" id="organigation">
+</div>
+<div>
     <b>Orginaization Profile picture</b>
     <input type="text" id="organigation">
 </div>
