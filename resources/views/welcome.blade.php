@@ -29,6 +29,16 @@
         <input type="text" class="small" id="full_name">
     </div>
 </div>
+<div>
+    <div class="control-group">
+        <span>
+            <b>
+                 name
+            </b>
+        </span>
+        <input type="text" class="small" id="full_name">
+    </div>
+</div>
 <div class="control-group">
     <span>
         <b>
@@ -37,10 +47,6 @@
     </span>
     {{-- <legend><b>Location</b></legend> --}}
     <input type="textaria" id="location">
-</div>
-<div>
-    <b>Phone Number</b>
-    <input type="text" id="phone">
 </div>
 <div>
     <b>organigation name</b>
