@@ -99,7 +99,7 @@ body {
 </style>
 <body>
     <nav class="navbar">
-        <div class="logo">MyWebsite</div>
+        <div class="logo"> <a href="{{ url('/') }}" style=" color: #fff; !importent">MyWebsite</a></div>
         <ul class="nav-links">
             <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="{{ url('userview') }}">user info</a></li>
