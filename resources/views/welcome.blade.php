@@ -28,43 +28,24 @@
         </span>
         <input type="text" class="small" id="full_name">
     </div>
-</div>
-<div>
     <div class="control-group">
         <span>
             <b>
-                 name
+                Location
             </b>
         </span>
-        <input type="text" class="small" id="full_name">
+        <input type="text" class="small" id="location">
+    </div>
+    <div class="control-group">
+        <span>
+            <b>
+                Phone
+            </b>
+        </span>
+        <input type="text" class="small" id="phone">
     </div>
 </div>
-<div class="control-group">
-    <span>
-        <b>
-            Location
-        </b>
-    </span>
-    {{-- <legend><b>Location</b></legend> --}}
-    <input type="textaria" id="location">
-</div>
-<div>
-    <b>organigation name</b>
-    <input type="text" id="organigation">
-</div>
 
-<div>
-    <b>Profile Pic</b>
-    <input type="text" id="organigation">
-</div>
-<div>
-    <b>org pic</b>
-    <input type="text" id="organigation">
-</div>
-<div>
-    <b>Orginaization Profile picture</b>
-    <input type="text" id="organigation">
-</div>
         <button onclick="add_somthing()" style="btn btn-small btn-success">
             Click me   </button>
             <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -90,7 +71,7 @@
                     };
 
                     // Display data for debugging
-                    console.log(data);
+                    // console.log(data);
 
                     // AJAX request
                     $.ajax({

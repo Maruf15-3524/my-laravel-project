@@ -42,4 +42,10 @@ public function updateuser(Request $request){
     $userupdate->save();
 
 }
+
+public function deleteuser($id){
+    $for_delete=UserInfo::find($id);
+    $for_delete->delete();
+    return back();
+}
 }

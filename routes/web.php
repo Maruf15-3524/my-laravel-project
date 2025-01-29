@@ -24,6 +24,8 @@ Route::get('/edituser/{id}',[UserInfoController::class,'edituser']);
 
 Route::post('/upadte', [UserInfoController::class, 'updateuser']);
 
+Route::get('/deleteuser/{id}', [UserInfoController::class, 'deleteuser']);
+
 // Route::get('/user', [UserController::class, 'index']);
 
 

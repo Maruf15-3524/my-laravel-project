@@ -13,6 +13,7 @@
         <h3>Phone: {{ $users->phone }}</h3>
         <h4>Location: {{ $users->location }}</h4>
         <a href="{{ url('/edituser') }}/{{ $users->id }}">edit</a>
+        <a href="{{ url('/deleteuser') }}/{{ $users->id }}">Delete</a>
         <hr>
     @endforeach
 
