@@ -1,3 +1,5 @@
+@include("navbar")
+
 <!DOCTYPE html>
 <html lang="en">
 

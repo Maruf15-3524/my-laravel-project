@@ -9,8 +9,18 @@
 </head>
 <body>
     <div>
+       <div>
         <span>Full Name:</span>
     <input type="text" name="" id="full_name" value="{{ $editusevariable->full_name }}">
+        </div>
+        <div>
+        <span>Location:</span>
+    <input type="text" name="" id="location" value="{{ $editusevariable->location }}">
+        </div>
+        <div>
+        <span>Phone:</span>
+    <input type="text" name="" id="phone" value="{{ $editusevariable->phone }}">
+        </div>
     <input type="hidden" name="" id="edit_id" value="{{ $editusevariable->id }}">
     </div>
     <button type="submit" onclick="upadate_bnt()">update</button>
@@ -30,6 +40,9 @@
 
     function upadate_bnt() {
         var full_name = $("#full_name").val();
+         var location = $("#location").val();
+         var phone = $("#phone").val();
+
         var edit_id = $("#edit_id").val();
 
         if (!full_name || !edit_id) {
@@ -39,6 +52,8 @@
 
         var data = {
             full_name: full_name,
+            location: location,
+            phone: phone,
             id: edit_id
         };
 
@@ -47,16 +62,11 @@
             url: "{{ url('/upadte') }}",
             data: data,
             success: function(result) {
-                alert("Data successfully inserted");
-                console.log(result); // Debug output
-                // Redirect if necessary
-                // window.location.href = "/userview";
+                alert("Data successfully Updated");
+                window.location.href = "/userview";
+
             },
-            error: function(xhr, status, error) {
-                console.error("Error:", error);
-                console.error("Response:", xhr.responseText);
-                alert("Failed to update data.");
-            }
+
         });
     }
 </script>

@@ -39,8 +39,10 @@ public function updateuser(Request $request){
 
     $userupdate=UserInfo::find($request->id);
     $userupdate->full_name= $request->full_name;
+    $userupdate->location= $request->location;
+    $userupdate->phone= $request->phone;
     $userupdate->save();
-
+    return redirect('/userview');
 }
 
 public function deleteuser($id){
