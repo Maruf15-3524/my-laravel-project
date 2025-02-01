@@ -45,6 +45,15 @@
         </span>
         <input type="text" class="small" id="phone">
     </div>
+    <br>
+    <div class="control-group">
+        <span>
+            <b>
+                Profile Picture
+            </b>
+        </span>
+        <input type="file" class="small" id="git">
+    </div>
 </div>
 
         <button onclick="add_somthing()" style="btn btn-small btn-success">
