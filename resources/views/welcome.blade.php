@@ -53,7 +53,6 @@
             </b>
         </span>
         <input type="file" class="small" id="git">
-        <input type="image" class="small" id="git">
     </div>
 </div>
 

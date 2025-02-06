@@ -103,8 +103,6 @@ body {
         <ul class="nav-links">
             <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="{{ url('userview') }}">user info</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger">
             <div class="line"></div>
