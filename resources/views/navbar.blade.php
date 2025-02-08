@@ -102,7 +102,7 @@ body {
         <div class="logo"> <a href="{{ url('/') }}" style=" color: #fff; !importent">MyWebsite</a></div>
         <ul class="nav-links">
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('userview') }}">user info</a></li>
+            <li><a href="{{ url('userview') }}">User</a></li>
         </ul>
         <div class="hamburger">
             <div class="line"></div>
