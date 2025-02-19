@@ -10,7 +10,7 @@
 <body>
     <div>
        <div>
-        <span>Full Name:</span>
+        <span>Full org  Name:</span>
     <input type="text" name="" id="full_name" value="{{ $editusevariable->full_name }}">
         </div>
         <div>
