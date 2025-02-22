@@ -22,6 +22,7 @@
     <input type="text" name="" id="phone" value="{{ $editusevariable->phone }}">
         </div>
     <input type="hidden" name="" id="edit_id" value="{{ $editusevariable->id }}">
+    <img src="{{ asset('storage/' . $editusevariable->profile_pic) }}" width="100" alt="Profile Picture">
     </div>
     <button type="submit" onclick="upadate_bnt()">update</button>
 
