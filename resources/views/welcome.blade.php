@@ -52,53 +52,60 @@
                 Profile Picture
             </b>
         </span>
-        <input type="file" class="small" id="git">
+        <input type="file" class="small" id="profile_picture">
     </div>
 </div>
 
         <button onclick="add_somthing()" style="btn btn-small btn-success">
             Click me   </button>
             <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-            <script>
-                function add_somthing() {
-                    // Get values from the form
-                    var full_name = $("#full_name").val().trim();
-                    var location = $("#location").val().trim();
-                    var phone = $("#phone").val().trim();
+<script>
+    function add_somthing() {
+        // Get values from the form
+        var full_name = $("#full_name").val().trim();
+        var location = $("#location").val().trim();
+        var phone = $("#phone").val().trim();
+        var profile_picture = $('#profile_picture')[0].files[0];
 
-                    // Validate inputs
-                    if (!full_name || !location || !phone) {
-                        alert("All fields are required!");
-                        return;
-                    }
+        // Validate inputs
+        if (!full_name || !location || !phone) {
+            alert("All fields are required!");
+            return;
+        }
 
-                    // Prepare data
-                    var data = {
-                        full_name: full_name,
-                        location: location,
-                        phone: phone,
-                        _token: "{{ csrf_token() }}" // Include CSRF token if necessary
-                    };
+        // Prepare FormData for file upload
+        var formData = new FormData();
+        formData.append('full_name', full_name);
+        formData.append('location', location);
+        formData.append('phone', phone);
+        formData.append('_token', "{{ csrf_token() }}");
+        if (profile_picture) {
+            formData.append('profile_picture', profile_picture);
+        }
 
-                    // Display data for debugging
-                    // console.log(data);
-
-                    // AJAX request
-                    $.ajax({
-                        type: "POST",
-                        url: "{{ url('/user') }}",
-                        data: data,
-                        success: function (result) {
-                            // alert("Success: " + result);
-                            alert("data Succesfully Inserted");
-                            var redirectUrl = "/userview";
-				             window.location.href = redirectUrl;
-
-                        },
-
-                    });
+        // AJAX request
+        $.ajax({
+            type: "POST",
+            url: "{{ url('/user') }}",
+            data: formData,
+            contentType: false,  // Required for file upload
+            processData: false,  // Required for file upload
+            success: function (result) {
+                alert("Data Successfully Inserted");
+                var redirectUrl = "/userview";
+                window.location.href = redirectUrl;
+            },
+            error: function (xhr) {
+                let errors = xhr.responseJSON.errors;
+                let errorMessage = 'Please fix the following errors:\n';
+                for (const key in errors) {
+                    errorMessage += `${errors[key]}\n`;
                 }
-            </script>
+                alert(errorMessage);
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

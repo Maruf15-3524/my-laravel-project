@@ -14,6 +14,11 @@
         <h2>Full Name: {{ $users->full_name }}</h2>
         <h3>Phone: {{ $users->phone }}</h3>
         <h4>Location: {{ $users->location }}</h4>
+        @if ($users->profile_pic)
+            <img src="{{ asset('storage/' . $users->profile_pic) }}" width="100" alt="Profile Picture">
+        @else
+            <p>No profile picture uploaded.</p>
+        @endif
         <a href="{{ url('/edituser') }}/{{ $users->id }}">edit</a>
         <a href="{{ url('/deleteuser') }}/{{ $users->id }}">Delete</a>
         <hr>

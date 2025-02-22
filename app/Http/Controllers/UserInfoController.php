@@ -7,19 +7,35 @@ use Illuminate\Http\Request;
 
 class UserInfoController extends Controller
 {
-    public function user(Request $request){
-        // dd($request->all());
-
-
-        UserInfo::insert(  [
-            "full_name"=> $request->full_name,
-            "phone"=> $request->phone,
-            "location"=> $request->location,
+    public function user(Request $request)
+    {
+        // Validate form data
+        $request->validate([
+            'full_name' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'phone' => 'required|string|max:15',
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // return redirect ()->back();
+        // Handle image upload
+        $imagePath = null;
+        if ($request->hasFile('profile_picture')) {
+            $image = $request->file('profile_picture');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imagePath = $image->storeAs('uploads/profile_pictures', $imageName, 'public');
+        }
 
+        // Insert data into database
+        UserInfo::insert([
+            'full_name' => $request->full_name,
+            'location' => $request->location,
+            'phone' => $request->phone,
+            'profile_pic' => $imagePath
+        ]);
+
+        return response()->json(['success' => true]);
     }
+
     public function userview(){
         $user= UserInfo::all();
         // $user=UserInfo::where("id",3)->first();
